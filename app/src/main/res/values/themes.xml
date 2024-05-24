@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Cookio" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    </style>
+
+    <style name="Theme.Cookio" parent="Base.Theme.Cookio">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <style name="selected_bottom_bar_item" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/main_button_color</item>
+    </style>
+</resources>

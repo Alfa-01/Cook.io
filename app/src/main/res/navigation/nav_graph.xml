@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment">
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.cookio.news.NewsFragment"
+        android:label="NewsFragment"
+        tools:layout="@layout/news_fragment"/>
+    <fragment
+        android:id="@+id/newReceiptFragment"
+        android:name="com.example.cookio.new_receipt.ui.NewReceiptFragment"
+        android:label="NewReceiptFragment"
+        tools:layout="@layout/new_receipt_fragment"/>
+    <fragment
+        android:id="@+id/communitiesFragment"
+        android:name="com.example.cookio.communities.CommunitiesFragment"
+        android:label="CommunitiesFragment"
+        tools:layout="@layout/fragment_communities"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.cookio.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.cookio.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+</navigation>

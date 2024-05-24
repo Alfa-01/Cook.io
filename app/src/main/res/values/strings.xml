@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cook.io</string>
+    <string name="news_header">Вам понравится</string>
+    <string name="new_receipt">Что будем готовить?</string>
+    <string name="search_hint">Ищите как угодно - найдём всё, что есть</string>
+    <string name="communities">Ваши сообщества</string>
+    <string name="settings">Настройки</string>
+    <string name="profile">Ваш профиль</string>
+</resources>

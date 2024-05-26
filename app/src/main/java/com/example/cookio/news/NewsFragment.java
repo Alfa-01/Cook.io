@@ -56,6 +56,7 @@ public class NewsFragment extends Fragment {
 
                 binding.newsError.setText(state.getErrorMessage());
                 if(isSuccess) {
+
                     adapter.updateData(state.getItems());
                 }
 

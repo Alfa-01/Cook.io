@@ -12,6 +12,10 @@ public class NewsEntity {
     private final String authorId;
     @Nullable
     private final String description;
+    @Nullable
+    private final String authorImagePreview;
+    @Nullable
+    private final String authorNickname;
     private final int likes;
 
     @Nullable
@@ -34,6 +38,16 @@ public class NewsEntity {
         return description;
     }
 
+    @Nullable
+    public String getAuthorImagePreview() {
+        return authorImagePreview;
+    }
+
+    @Nullable
+    public String getAuthorNickname() {
+        return authorNickname;
+    }
+
     public int getLikes() {
         return likes;
     }
@@ -42,11 +56,15 @@ public class NewsEntity {
                       @Nullable String image,
                       @Nullable String authorId,
                       @Nullable String description,
+                      @Nullable String authorImagePreview,
+                      @Nullable String authorNickname,
                       int likes) {
         this.id = id;
         this.image = image;
         this.authorId = authorId;
         this.description = description;
+        this.authorImagePreview = authorImagePreview;
+        this.authorNickname = authorNickname;
         this.likes = likes;
     }
 }

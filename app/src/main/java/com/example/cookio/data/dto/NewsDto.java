@@ -24,4 +24,12 @@ public class NewsDto {
     @Nullable
     @SerializedName("image")
     public String image;
+
+    @Nullable
+    @SerializedName("authorImagePreview")
+    public String authorImagePreview;
+
+    @Nullable
+    @SerializedName("authorNickname")
+    public String authorNickname;
 }

@@ -1,11 +1,11 @@
 package com.example.cookio.news.list;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.cookio.data.NewsRepositoryImplementation;
+import com.example.cookio.data.utils.State;
 import com.example.cookio.domain.GetNewsListUseCase;
 import com.example.cookio.domain.entitites.NewsEntity;
 import com.example.cookio.domain.entitites.Status;
@@ -14,8 +14,8 @@ import java.util.List;
 
 public class NewsListViewModel extends ViewModel {
 
-    private final MutableLiveData<State> stateMutableLiveData = new MutableLiveData<>();
-    public final LiveData<State> stateLiveData = stateMutableLiveData;
+    private final MutableLiveData<State<NewsEntity>> stateMutableLiveData = new MutableLiveData<>();
+    public final LiveData<State<NewsEntity>> stateLiveData = stateMutableLiveData;
     private final GetNewsListUseCase getNewsListUseCase =
             new GetNewsListUseCase(NewsRepositoryImplementation.getInstance());
 
@@ -31,45 +31,11 @@ public class NewsListViewModel extends ViewModel {
         });
     }
 
-    private State fromState(Status<List<NewsEntity>> status) {
-        return new State(
+    private State<NewsEntity> fromState(Status<List<NewsEntity>> status) {
+        return new State<NewsEntity>(
                 status.getErrors() != null ? status.getErrors().getLocalizedMessage() : null,
                 status.getValue(),
                 false
         );
-    }
-
-    public class State {
-
-        @Nullable
-        private final String errorMessage;
-
-        @Nullable
-        private final List<NewsEntity> items;
-
-        private final boolean isLoading;
-
-        @Nullable
-        public String getErrorMessage() {
-            return errorMessage;
-        }
-
-        @Nullable
-        public List<NewsEntity> getItems() {
-            return items;
-        }
-
-        public boolean isLoading() {
-            return isLoading;
-        }
-
-        public State(
-                @Nullable String errorMessage,
-                @Nullable List<NewsEntity> items,
-                boolean isLoading) {
-            this.errorMessage = errorMessage;
-            this.items = items;
-            this.isLoading = isLoading;
-        }
     }
 }

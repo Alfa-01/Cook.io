@@ -44,6 +44,8 @@ public class NewsRepositoryImplementation implements NewsRepository {
                                             newsDto.image,
                                             newsDto.authorId,
                                             newsDto.description,
+                                            newsDto.authorImagePreview,
+                                            newsDto.authorNickname,
                                             newsDto.likes));
                         }
                     }

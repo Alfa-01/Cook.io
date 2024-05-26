@@ -1,17 +1,20 @@
 package com.example.cookio.news.list;
 
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookio.R;
 import com.example.cookio.databinding.NewsItemBinding;
 import com.example.cookio.domain.entitites.NewsEntity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class NewsRecyclerViewAdapter
         extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> {
@@ -21,7 +24,6 @@ public class NewsRecyclerViewAdapter
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d("firebase", "onCreateViewHolder");
         return new ViewHolder(
                 NewsItemBinding.inflate(
                         LayoutInflater.from(parent.getContext()),
@@ -59,10 +61,25 @@ public class NewsRecyclerViewAdapter
             binding.postUsername.setText(item.getAuthorId());
             binding.postLikeButton.setText(String.valueOf(item.getLikes()));
             binding.description.setText(item.getDescription());
+            binding.postUsername.setText(item.getAuthorNickname());
 
-            Log.d("firebase", item.getDescription());
-            //TODO: place image to layout (with picasso)
-            //TODO: add usernames and profile's icon
+            if (item.getAuthorImagePreview() != null) {
+                Picasso.get()
+                        .load(item.getAuthorImagePreview())
+                        .fit()
+                        .into(binding.postUsernameProfileIcon);
+            } else {
+                Picasso.get()
+                        .load(R.drawable.profile_icon)
+                        .fit()
+                        .into(binding.postUsernameProfileIcon);
+            }
+
+            Picasso.get()
+                    .load(item.getImage())
+                    .fit()
+                    .into(binding.postContent);
+
         };
     }
 }

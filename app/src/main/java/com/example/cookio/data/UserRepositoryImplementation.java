@@ -1,6 +1,7 @@
 package com.example.cookio.data;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.cookio.data.dto.UserDto;
 import com.example.cookio.data.network.RetrofitFactory;
@@ -40,7 +41,6 @@ public class UserRepositoryImplementation implements UserRepository {
                                 ResultId,
                                 name,
                                 userDto.lastName,
-                                userDto.nickName,
                                 userDto.image,
                                 userDto.posts,
                                 userDto.points

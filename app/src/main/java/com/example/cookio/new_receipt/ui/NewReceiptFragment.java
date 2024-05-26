@@ -2,7 +2,9 @@ package com.example.cookio.new_receipt.ui;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +25,19 @@ public class NewReceiptFragment extends Fragment {
         super(R.layout.new_receipt_fragment);
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
+        binding = NewReceiptFragmentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = NewReceiptFragmentBinding.inflate(getLayoutInflater());
 
         receiptListViewModel = new ViewModelProvider(this).get(ReceiptListViewModel.class);
 

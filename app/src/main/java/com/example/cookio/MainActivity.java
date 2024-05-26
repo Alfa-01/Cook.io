@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = MainActivityBinding.inflate(getLayoutInflater());
+        getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         setContentView(binding.getRoot());
 
         BottomNavigationView bottomNavigationView = binding.bottomNavigationView;
@@ -38,22 +39,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
-//        RetrofitFactory retrofit = RetrofitFactory.getInstance();
-//
-//        Call<List<ReceiptDto>> response= retrofit.getReceiptApi().getAll();
-//
-//        response.enqueue(new Callback<List<ReceiptDto>>() {
-//            @Override
-//            public void onResponse(Call<List<ReceiptDto>> call, Response<List<ReceiptDto>> response) {
-//                Log.d("firebase", response.body().get(0).name);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<ReceiptDto>> call, Throwable throwable) {
-//                Log.d("firebase", throwable.getLocalizedMessage());
-//            }
-//        });
 
     }
 }

@@ -22,14 +22,25 @@ public class UserDto {
     @SerializedName("lastName")
     public String lastName;
 
-    @Nullable
-    @SerializedName("nickName")
-    public String nickName;
-
     @SerializedName("points")
     public int points;
 
     @Nullable
     @SerializedName("posts")
     public String[] posts;
+
+    public UserDto(
+                   @Nullable String id,
+                   @Nullable String image,
+                   @Nullable String name,
+                   @Nullable String lastName,
+                   int points,
+                   @Nullable String[] posts) {
+        this.id = id;
+        this.image = image;
+        this.name = name;
+        this.lastName = lastName;
+        this.points = points;
+        this.posts = posts;
+    }
 }

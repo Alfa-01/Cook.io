@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "884226360749",
+    "firebase_url": "https://cookio-5e0a7-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cookio-5e0a7",
+    "storage_bucket": "cookio-5e0a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884226360749:android:e51cc0b66f222f1a764d24",
+        "android_client_info": {
+          "package_name": "com.example.cookio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGCC3I2oDKsQpjrWoNO8GgjzMbq3fAFmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

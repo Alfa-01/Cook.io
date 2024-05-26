@@ -25,12 +25,23 @@ public class NewsFragment extends Fragment {
         super(R.layout.news_fragment);
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
+        binding = NewsFragmentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding = NewsFragmentBinding.inflate(getLayoutInflater());
 
         newsListViewModel = new ViewModelProvider(this).get(NewsListViewModel.class);
+
+        binding.refresh.setOnRefreshListener(() -> newsListViewModel.update());
 
         final NewsRecyclerViewAdapter adapter =
                 new NewsRecyclerViewAdapter();
@@ -46,8 +57,9 @@ public class NewsFragment extends Fragment {
                 boolean isSuccess = !state.isLoading()
                         && state.getErrorMessage() == null
                         && state.getItems() != null;
+
                 binding.refresh.setEnabled(!state.isLoading());
-                binding.refresh.setRefreshing(!state.isLoading());
+                if (!state.isLoading()) binding.refresh.setRefreshing(false);
 
                 binding.newsRecycler.setVisibility(Utils.visibleOrGone(isSuccess));
                 binding.newsError.setVisibility(Utils.visibleOrGone(
@@ -55,11 +67,10 @@ public class NewsFragment extends Fragment {
                 binding.newsLoading.setVisibility(Utils.visibleOrGone(state.isLoading()));
 
                 binding.newsError.setText(state.getErrorMessage());
-                if(isSuccess) {
 
+                if(isSuccess) {
                     adapter.updateData(state.getItems());
                 }
-
         });
     }
 

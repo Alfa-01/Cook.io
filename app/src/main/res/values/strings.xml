@@ -6,4 +6,20 @@
     <string name="communities">Ваши сообщества</string>
     <string name="settings">Настройки</string>
     <string name="profile">Ваш профиль</string>
+    <string name="welcome_message">Добро пожаловать</string>
+    <string name="email_hint">example@org.com</string>
+    <string name="email_required">Введите адрес эл. почты</string>
+    <string name="new_password_required">Придумайте пароль</string>
+    <string name="password_required">Введите пароль</string>
+    <string name="password_hint">qwerty1234</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="sign_up_hint">Нет аккаунта? Зарегистрироваться</string>
+    <string name="sign_in_hint">Уже есть аккаунт? Войти</string>
+    <string name="sign_in_warning">Неверный логин или пароль</string>
+    <string name="name_required">Укажите Ваше имя</string>
+    <string name="name_hint">Имя Фамилия</string>
+    <string name="nickname_required">Придумайте псевдоним</string>
+    <string name="nickname_hint">Поль Бокюз</string>
+    <string name="logout">Выйти из аккаунта</string>
 </resources>

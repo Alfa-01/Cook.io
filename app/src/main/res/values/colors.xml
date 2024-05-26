@@ -6,4 +6,6 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="main_button_color">#FFC97B</color>
     <color name="grey">#F5F5F5</color>
+    <color name="red">#B3261E</color>
+    <color name="pink">#F9DEDC</color>
 </resources>

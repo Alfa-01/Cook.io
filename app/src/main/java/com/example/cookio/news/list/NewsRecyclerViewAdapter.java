@@ -1,13 +1,16 @@
 package com.example.cookio.news.list;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookio.R;
+import com.example.cookio.databinding.NewsFragmentBinding;
 import com.example.cookio.databinding.NewsItemBinding;
 import com.example.cookio.domain.entitites.NewsEntity;
 import com.squareup.picasso.Picasso;
@@ -63,23 +66,22 @@ public class NewsRecyclerViewAdapter
             binding.description.setText(item.getDescription());
             binding.postUsername.setText(item.getAuthorNickname());
 
-            if (item.getAuthorImagePreview() != null) {
+            if (!item.getAuthorImagePreview().isEmpty()) {
                 Picasso.get()
                         .load(item.getAuthorImagePreview())
                         .fit()
                         .into(binding.postUsernameProfileIcon);
             } else {
+                Log.d("data", "proceed");
                 Picasso.get()
-                        .load(R.drawable.profile_icon)
+                        .load(R.drawable.profile)
                         .fit()
                         .into(binding.postUsernameProfileIcon);
             }
 
             Picasso.get()
                     .load(item.getImage())
-                    .fit()
                     .into(binding.postContent);
-
         };
     }
 }

@@ -1,18 +1,20 @@
 package com.example.cookio.news.list;
 
 
-import android.util.Log;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookio.R;
-import com.example.cookio.databinding.NewsFragmentBinding;
+import com.example.cookio.data.utils.Utils;
 import com.example.cookio.databinding.NewsItemBinding;
 import com.example.cookio.domain.entitites.NewsEntity;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -22,7 +24,9 @@ import java.util.List;
 public class NewsRecyclerViewAdapter
         extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> {
 
+
     private final List<NewsEntity> data = new ArrayList<>();
+    private DatabaseReference reference;
 
     @NonNull
     @Override
@@ -62,7 +66,7 @@ public class NewsRecyclerViewAdapter
 
         public void bind(NewsEntity item) {
             binding.postUsername.setText(item.getAuthorId());
-            binding.postLikeButton.setText(String.valueOf(item.getLikes()));
+            binding.unlikeValue.setText(String.valueOf(item.getLikes()));
             binding.description.setText(item.getDescription());
             binding.postUsername.setText(item.getAuthorNickname());
 
@@ -81,6 +85,28 @@ public class NewsRecyclerViewAdapter
             Picasso.get()
                     .load(item.getImage())
                     .into(binding.postContent);
+
+            binding.unlikeField.setOnClickListener(v -> {
+                reference = FirebaseDatabase.getInstance().getReference();
+
+                    reference.child("news").child(item.getId())
+                            .child("likes").setValue(item.getLikes() + 1);
+                    binding.unlikeField.setVisibility(Utils.visibleOrGone(false));
+                    binding.likeField.setVisibility(Utils.visibleOrGone(true));
+                    binding.likeValue.setText(String.valueOf(item.getLikes() + 1));
+                    binding.unlikeValue.setText(String.valueOf(item.getLikes() + 1));
+            });
+
+            binding.likeField.setOnClickListener(v -> {
+                reference = FirebaseDatabase.getInstance().getReference();
+
+                    reference.child("news").child(item.getId())
+                            .child("likes").setValue(item.getLikes() + 1);
+                    binding.unlikeField.setVisibility(Utils.visibleOrGone(true));
+                    binding.likeField.setVisibility(Utils.visibleOrGone(false));
+                    binding.likeValue.setText(String.valueOf(item.getLikes()));
+                    binding.unlikeValue.setText(String.valueOf(item.getLikes()));
+            });
         };
     }
 }

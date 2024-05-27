@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.cookio.R;
 import com.example.cookio.databinding.FragmentProfileBinding;
@@ -66,6 +67,11 @@ public class ProfileFragment extends Fragment {
         binding.logout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             Log.d("Auth", "Logged out");   });
+
+        binding.edit.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(
+                    R.id.action_profileFragment_to_editProfileFragment);
+        });
     }
 
     @Override

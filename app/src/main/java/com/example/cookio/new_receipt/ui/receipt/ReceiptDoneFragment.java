@@ -84,7 +84,7 @@ public class ReceiptDoneFragment extends Fragment {
                     fullReceiptEntity.getTime() * 30 +
                     fullReceiptEntity.getIngredients().length * 10;
 
-            binding.receiptResult.setText(String.valueOf(result));
+            binding.receiptResult.setText("+ " + String.valueOf(result));
 
             reference = FirebaseDatabase.getInstance().getReference();
 

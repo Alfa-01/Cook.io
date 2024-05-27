@@ -40,15 +40,15 @@
                 android:textColor="@color/black">
             </TextView>
 
-            <TextView
+            <EditText
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="85dp"
+                android:layout_marginStart="90dp"
                 android:fontFamily="@font/montserrat"
                 android:textSize="20sp"
-                tools:text="Гюсто" />
+                android:hint="@string/name_required" />
 
         </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:textColor="@color/black">
             </TextView>
 
-            <TextView
+            <EditText
                 android:id="@+id/lastName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_marginStart="40dp"
                 android:fontFamily="@font/montserrat"
                 android:textSize="20sp"
-                tools:text="Амбрэ" />
+                android:hint="@string/lastname_required" />
 
         </LinearLayout>
 
@@ -96,7 +96,7 @@
                 android:textColor="@color/black">
             </TextView>
 
-            <TextView
+            <EditText
                 android:id="@+id/nickName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,86 +104,16 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/montserrat"
                 android:textSize="20sp"
-                tools:text="Гюсто" />
+                android:hint="@string/nickname_required" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="40dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email_header"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="20sp"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/black">
-            </TextView>
-
-            <TextView
-                tools:text="green98vitalic@gmail.com"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/email"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="40dp"
-                android:fontFamily="@font/montserrat"
-                android:textSize="18sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/points_header"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="20sp"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/black">
-            </TextView>
-
-            <TextView
-                android:id="@+id/cook_points"
-                android:background="@drawable/rounded_item"
-                android:backgroundTint="@color/light_green"
-                tools:text="250"
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/email"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/montserrat"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
 
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/logout"
+            android:text="@string/save"
             android:layout_marginTop="40dp"
-            android:layout_marginStart="40dp"
-            android:backgroundTint="@color/red"
-            android:textColor="@color/white"
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit_user"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="40dp"
             android:backgroundTint="@color/main_button_color"
             android:textColor="@color/black"

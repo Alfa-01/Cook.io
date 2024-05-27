@@ -18,7 +18,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:textSize="25sp"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="40dp"/>
+                android:layout_marginStart="40dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,6 +83,7 @@
                 android:layout_marginStart="40dp" />
 
             <LinearLayout
+                android:padding="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,30 +99,60 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="25sp"
                     android:layout_marginStart="10dp"/>
-                <Button
-                    android:id="@+id/receipt_result"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="3dp"
+                
+                <LinearLayout
+                    android:padding="5dp"
+                    android:paddingEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="+120"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:backgroundTint="@color/light_green"/>
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_item"
+                    android:backgroundTint="@color/light_green">
+                    <Button
+                        android:id="@+id/receipt_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="+120"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:backgroundTint="@color/light_green"/>
+                    
+                    
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fork_and_knife"/>
+                </LinearLayout>
 
             </LinearLayout>
-            <Button
+            
+            <LinearLayout
+                android:padding="5dp"
                 android:layout_marginTop="20dp"
-                android:id="@+id/back_to_main"
                 android:layout_marginStart="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/back_to_main"
-                android:backgroundTint="@color/main_button_color"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="16sp"/>
+                android:background="@drawable/rounded_item"
+                android:backgroundTint="@color/main_button_color">
+                <Button
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/back_to_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/back_to_main"
+                    android:backgroundTint="@color/main_button_color"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="16sp"/>
+                
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home"/>
+            </LinearLayout>
 
         </LinearLayout>
 

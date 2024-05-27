@@ -40,4 +40,7 @@
     <string name="email_header">Эл. почта</string>
     <string name="points_header">Cook points</string>
     <string name="nickname_header">Псевдоним</string>
+    <string name="edit_user">Редактировать профиль</string>
+    <string name="save">Сохранить</string>
+    <string name="lastname_required">Укажите вашу фамилию</string>
 </resources>

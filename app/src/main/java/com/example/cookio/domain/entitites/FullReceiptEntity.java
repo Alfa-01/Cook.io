@@ -14,7 +14,10 @@ public class FullReceiptEntity {
     private final String country;
     @Nullable
     private final String instructions;
-
+    @Nullable
+    private final String description;
+    private final int difficult;
+    private final int time;
     @Nullable
     public String getId() {
         return id;
@@ -72,6 +75,19 @@ public class FullReceiptEntity {
     @Nullable
     private final String[] measures;
 
+    public int getDifficult() {
+        return difficult;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    @Nullable
+    public String getDescription() {
+        return description;
+    }
+
     public FullReceiptEntity(
             @Nullable String id,
             @Nullable String name,
@@ -79,6 +95,9 @@ public class FullReceiptEntity {
             @Nullable String country,
             @Nullable String instructions,
             @Nullable String image,
+            @Nullable String description,
+            int difficult,
+            int time,
             @Nullable String[] tags,
             @Nullable String[] ingredients,
             @Nullable String[] measures) {
@@ -88,6 +107,9 @@ public class FullReceiptEntity {
         this.country = country;
         this.instructions = instructions;
         this.image = image;
+        this.description = description;
+        this.difficult = difficult;
+        this.time = time;
         this.tags = tags;
         this.ingredients = ingredients;
         this.measures = measures;

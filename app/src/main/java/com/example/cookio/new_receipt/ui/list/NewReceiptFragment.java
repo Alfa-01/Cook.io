@@ -1,4 +1,4 @@
-package com.example.cookio.new_receipt.ui;
+package com.example.cookio.new_receipt.ui.list;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,12 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.cookio.R;
 import com.example.cookio.data.utils.Utils;
 import com.example.cookio.databinding.NewReceiptFragmentBinding;
 import com.example.cookio.new_receipt.ui.list.ReceiptListViewModel;
 import com.example.cookio.new_receipt.ui.list.ReceiptRecyclerViewAdapter;
+import com.example.cookio.new_receipt.ui.receipt.ReceiptFragment;
 
 public class NewReceiptFragment extends Fragment {
     private NewReceiptFragmentBinding binding;
@@ -51,7 +53,13 @@ public class NewReceiptFragment extends Fragment {
 
     }
 
-    private void openReceipt(String id) {}
+    private void openReceipt(String id) {
+        View view = getView();
+        if (view == null) return;
+        Navigation.findNavController(view).navigate(
+                R.id.action_newReceiptFragment_to_receiptFragment,
+                ReceiptFragment.getBundle(id));
+    }
 
 
     private void subscribe(final ReceiptListViewModel viewModel,

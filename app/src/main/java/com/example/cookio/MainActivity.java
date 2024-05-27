@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.cookio.data.dto.ReceiptDto;
 import com.example.cookio.data.network.RetrofitFactory;
 import com.example.cookio.databinding.MainActivityBinding;
+import com.example.cookio.domain.entitites.FullReceiptEntity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;

@@ -72,7 +72,6 @@ public class NewsRecyclerViewAdapter
                         .fit()
                         .into(binding.postUsernameProfileIcon);
             } else {
-                Log.d("data", "proceed");
                 Picasso.get()
                         .load(R.drawable.profile)
                         .fit()

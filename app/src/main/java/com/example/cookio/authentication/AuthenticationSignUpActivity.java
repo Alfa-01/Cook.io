@@ -13,6 +13,7 @@ import com.example.cookio.data.dto.UserDto;
 import com.example.cookio.data.network.RetrofitFactory;
 import com.example.cookio.data.utils.Utils;
 import com.example.cookio.databinding.SignUpLayoutBinding;
+import com.example.cookio.domain.entitites.UserEntity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
@@ -47,13 +48,15 @@ public class AuthenticationSignUpActivity extends AppCompatActivity {
                                 reference =
                                         FirebaseDatabase.getInstance(Utils.DbURL).getReference();
                                 reference.child("users").child(currentUser.getUid())
-                                        .setValue(new UserDto(
-                                                currentUser.getUid(),
-                                                null,
-                                                binding.nameInput.getText().toString().split(" ")[0],
-                                                binding.nameInput.getText().toString().split(" ")[1],
-                                                0,
-                                                null
+                                        .setValue(
+                                                new UserEntity(
+                                                    currentUser.getUid(),
+                                                    binding.nameInput.getText().toString().split(" ")[0],
+                                                    binding.nameInput.getText().toString().split(" ")[1],
+                                                    binding.nicknameInput.getText().toString(),
+                                                    null,
+                                                    null,
+                                                    0
                                         ));
 
                                 Intent intent = new Intent(AuthenticationSignUpActivity.this,

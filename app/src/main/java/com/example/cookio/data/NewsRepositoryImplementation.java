@@ -1,5 +1,7 @@
 package com.example.cookio.data;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.cookio.data.dto.NewsDto;
@@ -38,6 +40,7 @@ public class NewsRepositoryImplementation implements NewsRepository {
                     for (NewsDto newsDto: newsDtos) {
                         final String id = newsDto.id;
                         if (id != null) {
+                            Log.d("info", newsDto.authorNickname + " ");
                             result.add(
                                     new NewsEntity(
                                             id,

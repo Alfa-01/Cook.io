@@ -22,4 +22,22 @@
     <string name="nickname_required">Придумайте псевдоним</string>
     <string name="nickname_hint">Поль Бокюз</string>
     <string name="logout">Выйти из аккаунта</string>
+    <string name="cooking_now">Готовим</string>
+    <string name="start_cooking">Перейти к готовке</string>
+    <string name="you_will_need">Вам понадобятся</string>
+    <string name="prepare_ingredients">Подготовьте ингредиенты</string>
+    <string name="next">Дальше</string>
+    <string name="receipt">Рецепт</string>
+    <string name="meal_done">Bon appetit!</string>
+    <string name="watching_results">Подведение итогов</string>
+    <string name="difficult">Сложность</string>
+    <string name="time">Время готовки</string>
+    <string name="amount_of_ingredients">Количество ингредиентов</string>
+    <string name="at_all">Итого</string>
+    <string name="back_to_main">На главную</string>
+    <string name="name_header">Имя</string>
+    <string name="lastname_header">Фамилия</string>
+    <string name="email_header">Эл. почта</string>
+    <string name="points_header">Cook points</string>
+    <string name="nickname_header">Псевдоним</string>
 </resources>

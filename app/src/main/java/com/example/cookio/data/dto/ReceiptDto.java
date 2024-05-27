@@ -31,6 +31,14 @@ public class ReceiptDto {
     public String thumbUrl;
 
     @Nullable
+    @SerializedName("description")
+    public String description;
+
+    @SerializedName("difficult")
+    public int difficult;
+    @SerializedName("time")
+    public int time;
+    @Nullable
     @SerializedName("tags")
     public String[] tags;
 

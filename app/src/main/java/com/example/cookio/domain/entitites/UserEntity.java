@@ -11,6 +11,8 @@ public class UserEntity {
     @Nullable
     private final String lastName;
     @Nullable
+    private final String nickName;
+    @Nullable
     private final String image;
     @Nullable
     private final String[] posts;
@@ -23,6 +25,11 @@ public class UserEntity {
     @Nullable
     public String getId() {
         return id;
+    }
+
+    @Nullable
+    public String getNickName() {
+        return nickName;
     }
 
     @Nullable
@@ -48,6 +55,7 @@ public class UserEntity {
     public UserEntity(
                       @Nullable String id,
                       @Nullable String name,
+                      @Nullable String nickName,
                       @Nullable String lastName,
                       @Nullable String image,
                       @Nullable String[] posts,
@@ -55,6 +63,7 @@ public class UserEntity {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
+        this.nickName = nickName;
         this.image = image;
         this.posts = posts;
         this.points = points;

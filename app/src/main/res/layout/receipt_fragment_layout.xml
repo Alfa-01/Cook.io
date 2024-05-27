@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cooking_now"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp" />
+
+            <TextView
+                android:id="@+id/receipt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Рататуй"
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="40dp" />
+
+            <ImageView
+                android:id="@+id/receipt_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                tools:src="@drawable/food">
+            </ImageView>
+
+            <TextView
+                android:id="@id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Традиционное овощное блюдо прованской кухни из перца, баклажанов и кабачков, во многом похожее на венгерское лечо."
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="40dp" />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/start_cooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_cooking"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/main_button_color"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

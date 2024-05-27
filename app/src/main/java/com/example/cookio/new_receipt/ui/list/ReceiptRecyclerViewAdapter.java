@@ -1,5 +1,6 @@
 package com.example.cookio.new_receipt.ui.list;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -30,7 +31,8 @@ public class ReceiptRecyclerViewAdapter
 
         public void bind(ItemReceiptEntity item) {
             binding.nameReceipt.setText(item.getName());
-            binding.getRoot().setOnClickListener(v -> {
+            binding.nameReceipt.setOnClickListener(v -> {
+                Log.d("info", item.getId());
                 onItemClick.accept(item.getId());
             });
         }

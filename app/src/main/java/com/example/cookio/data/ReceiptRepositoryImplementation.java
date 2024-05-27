@@ -1,5 +1,8 @@
 package com.example.cookio.data;
 
+
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.cookio.data.dto.ReceiptDto;
@@ -52,12 +55,15 @@ public class ReceiptRepositoryImplementation implements ReceiptRepository {
         receiptApi.getById(id).enqueue(new CallToConsumer<>(
                 callback,
                 receipt -> {
+                    Log.d("info", id);
                     final String resultId = receipt.id;
                     final String name = receipt.name;
                     if (resultId != null && name != null) {
                         return new FullReceiptEntity(
                                 resultId, name, receipt.category, receipt.country,
-                                receipt.instructions, receipt.thumbUrl, receipt.tags,
+                                receipt.instructions, receipt.thumbUrl, receipt.description,
+                                receipt.difficult,
+                                receipt.time, receipt.tags,
                                 receipt.ingredients, receipt.measures
                         );
                     } else {

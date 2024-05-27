@@ -12,6 +12,6 @@ public interface ReceiptApi {
     @GET("receipts.json")
     Call<List<ReceiptDto>> getAll();
 
-    @GET("receipt/{id}.json")
+    @GET("receipts/{id}.json")
     Call<ReceiptDto> getById(@Path("id") String id);
 }

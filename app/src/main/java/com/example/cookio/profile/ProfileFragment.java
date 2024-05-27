@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.cookio.R;
 import com.example.cookio.databinding.FragmentProfileBinding;
+import com.example.cookio.domain.entitites.UserEntity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -19,6 +21,7 @@ public class ProfileFragment extends Fragment {
 
     private FragmentProfileBinding binding;
     private FirebaseUser user;
+    private UserViewModel userViewModel;
 
     public ProfileFragment() {
         super(R.layout.fragment_profile);
@@ -27,7 +30,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+                               @Nullable Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -36,14 +39,29 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.stateLiveData.observe(getViewLifecycleOwner(), state -> {
 
-        if (user != null) {
-            binding.email.setText(user.getEmail());
-            Log.d("tag", user.getEmail());
-        } else {
-            Log.d("tag", "User is not logged in");
-        }
+            UserEntity userEntity = state.getItems();
+            if (userEntity == null) return;
+
+            if (userEntity.getName() != null) {
+                binding.name.setText(userEntity.getName());
+            }
+            if (userEntity.getLastName() != null) {
+                binding.lastName.setText(userEntity.getLastName());
+            }
+            if (userEntity.getNickName() != null) {
+                binding.nickName.setText(userEntity.getNickName());
+            }
+            binding.cookPoints.setText(String.valueOf(userEntity.getPoints()));
+
+        });
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        binding.email.setText(user.getEmail());
+        userViewModel.load(user.getUid());
+
 
         binding.logout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();

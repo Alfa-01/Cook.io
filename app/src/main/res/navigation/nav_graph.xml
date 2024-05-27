@@ -11,9 +11,13 @@
         tools:layout="@layout/news_fragment"/>
     <fragment
         android:id="@+id/newReceiptFragment"
-        android:name="com.example.cookio.new_receipt.ui.NewReceiptFragment"
+        android:name="com.example.cookio.new_receipt.ui.list.NewReceiptFragment"
         android:label="NewReceiptFragment"
-        tools:layout="@layout/new_receipt_fragment"/>
+        tools:layout="@layout/new_receipt_fragment">
+        <action
+            android:id="@+id/action_newReceiptFragment_to_receiptFragment"
+            app:destination="@id/receiptFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communitiesFragment"
         android:name="com.example.cookio.communities.CommunitiesFragment"
@@ -29,4 +33,40 @@
         android:name="com.example.cookio.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/receiptFragment"
+        android:name="com.example.cookio.new_receipt.ui.receipt.ReceiptFragment"
+        android:label="ReceiptFragment"
+        tools:layout="@layout/receipt_fragment_layout">
+        <action
+            android:id="@+id/action_receiptFragment_to_receiptIngredientsFragment"
+            app:destination="@id/receiptIngredientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiptIngredientsFragment"
+        android:name="com.example.cookio.new_receipt.ui.receipt.ReceiptIngredientsFragment"
+        android:label="ReceiptIngredientsFragment"
+        tools:layout="@layout/receipt_ingredients">
+        <action
+            android:id="@+id/action_receiptIngredientsFragment_to_receiptInstructionsFragment"
+            app:destination="@id/receiptInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiptInstructionsFragment"
+        android:name="com.example.cookio.new_receipt.ui.receipt.ReceiptInstructionsFragment"
+        android:label="ReceiptInstructionsFragment"
+        tools:layout="@layout/receipt_instructions">
+        <action
+            android:id="@+id/action_receiptInstructionsFragment_to_receiptDoneFragment"
+            app:destination="@id/receiptDoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiptDoneFragment"
+        android:name="com.example.cookio.new_receipt.ui.receipt.ReceiptDoneFragment"
+        android:label="ReceiptDoneFragment"
+        tools:layout="@layout/receipt_done_layout">
+        <action
+            android:id="@+id/action_receiptDoneFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
 </navigation>

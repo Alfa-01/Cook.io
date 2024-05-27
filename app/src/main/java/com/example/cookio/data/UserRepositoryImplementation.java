@@ -1,5 +1,7 @@
 package com.example.cookio.data;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -41,6 +43,7 @@ public class UserRepositoryImplementation implements UserRepository {
                                 ResultId,
                                 name,
                                 userDto.lastName,
+                                userDto.nickName,
                                 userDto.image,
                                 userDto.posts,
                                 userDto.points

@@ -1,5 +1,9 @@
 package com.example.cookio.profile;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.cookio.MainActivity;
 import com.example.cookio.R;
+import com.example.cookio.SplashActivity;
 import com.example.cookio.databinding.FragmentProfileBinding;
 import com.example.cookio.domain.entitites.UserEntity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,7 +72,11 @@ public class ProfileFragment extends Fragment {
 
         binding.logout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            Log.d("Auth", "Logged out");   });
+
+            Intent intent=new Intent(getContext(), SplashActivity.class);
+            startActivity(intent);
+
+        });
 
         binding.edit.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(

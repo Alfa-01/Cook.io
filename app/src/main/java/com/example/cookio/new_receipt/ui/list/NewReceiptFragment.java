@@ -1,7 +1,6 @@
 package com.example.cookio.new_receipt.ui.list;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import androidx.navigation.Navigation;
 import com.example.cookio.R;
 import com.example.cookio.data.utils.Utils;
 import com.example.cookio.databinding.NewReceiptFragmentBinding;
-import com.example.cookio.new_receipt.ui.list.ReceiptListViewModel;
-import com.example.cookio.new_receipt.ui.list.ReceiptRecyclerViewAdapter;
 import com.example.cookio.new_receipt.ui.receipt.ReceiptFragment;
 
 public class NewReceiptFragment extends Fragment {

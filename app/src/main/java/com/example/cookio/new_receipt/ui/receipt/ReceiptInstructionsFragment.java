@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.cookio.R;
-import com.example.cookio.databinding.ReceiptIngredientsBinding;
 import com.example.cookio.databinding.ReceiptInstructionsBinding;
 import com.example.cookio.domain.entitites.FullReceiptEntity;
 

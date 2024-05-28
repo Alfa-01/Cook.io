@@ -1,8 +1,6 @@
 package com.example.cookio.news.list;
 
 
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 

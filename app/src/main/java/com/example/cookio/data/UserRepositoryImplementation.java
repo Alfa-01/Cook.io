@@ -1,11 +1,7 @@
 package com.example.cookio.data;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import com.example.cookio.data.dto.UserDto;
 import com.example.cookio.data.network.RetrofitFactory;
 import com.example.cookio.data.source.UserApi;
 import com.example.cookio.data.utils.CallToConsumer;
@@ -13,8 +9,6 @@ import com.example.cookio.domain.UserRepository;
 import com.example.cookio.domain.entitites.Status;
 import com.example.cookio.domain.entitites.UserEntity;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 public class UserRepositoryImplementation implements UserRepository {

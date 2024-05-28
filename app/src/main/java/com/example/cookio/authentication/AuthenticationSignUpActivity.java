@@ -9,14 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cookio.MainActivity;
 import com.example.cookio.R;
-import com.example.cookio.data.dto.UserDto;
-import com.example.cookio.data.network.RetrofitFactory;
 import com.example.cookio.data.utils.Utils;
 import com.example.cookio.databinding.SignUpLayoutBinding;
 import com.example.cookio.domain.entitites.UserEntity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

@@ -1,12 +1,10 @@
 package com.example.cookio.domain;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.example.cookio.domain.entitites.Status;
 import com.example.cookio.domain.entitites.UserEntity;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 

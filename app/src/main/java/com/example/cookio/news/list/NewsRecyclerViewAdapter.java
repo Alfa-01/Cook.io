@@ -85,7 +85,7 @@ public class NewsRecyclerViewAdapter
                     .into(binding.postContent);
 
             binding.unlikeField.setOnClickListener(v -> {
-                reference = FirebaseDatabase.getInstance().getReference();
+                    reference = FirebaseDatabase.getInstance().getReference();
 
                     reference.child("news").child(item.getId())
                             .child("likes").setValue(item.getLikes() + 1);

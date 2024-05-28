@@ -7,11 +7,6 @@
         android:icon="@drawable/news_icon"/>
 
     <item
-        android:id="@+id/communitiesFragment"
-        android:title="Сообщества"
-        android:icon="@drawable/communities_icon"/>
-
-    <item
         android:id="@+id/newReceiptFragment"
         android:title="Новый рецепт"
         android:icon="@drawable/fork_and_knife"/>
@@ -20,11 +15,6 @@
         android:id="@+id/profileFragment"
         android:title="Профиль"
         android:icon="@drawable/profile_icon"/>
-
-    <item
-        android:id="@+id/settingsFragment"
-        android:title="Настройки"
-        android:icon="@drawable/settings_icon"/>
 
 
 </menu>
